@@ -1,3 +1,16 @@
+// Boton ver más
+$(".oculto").hide();
+$(".btnVerMas").click(function(){
+   var self = $(this); 
+  self.next().toggle("slow");
+/////  
+  if(self.val()=="Leer más [+]; Leer menos [-]"){
+    self.val("Ver menos");
+  } else {
+    $(self).val ("Leer más [+]; Leer menos [-]");
+  }
+});
+
 // Add your javascript here
 // Don't forget to add it into respective layouts where this js file is needed
 
