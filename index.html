@@ -760,6 +760,118 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/aos.js"></script>
     <script src="scripts/main.js"></script>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>  
-   
+   <!-- === INICIO DEL WIDGET DE CV (VERDE IA/FINANZAS) === -->
+<!-- Botón flotante -->
+<div id="jz-cv-toggle" style="position: fixed; bottom: 80px; right: 20px; width: 60px; height: 60px; background: #008f39; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,143,57,0.3); z-index: 10000; transition: transform 0.3s;">
+  💼
+</div>
+
+<!-- Ventana de chat -->
+<div id="jz-cv-container" style="position: fixed; bottom: 150px; right: 20px; width: 350px; background: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); font-family: 'Segoe UI', Arial, sans-serif; overflow: hidden; z-index: 9999; display: none; flex-direction: column; border: 1px solid #e0e0e0;">
+  
+  <div style="background: #008f39; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 16px;">
+    <span>Entrevista a Jesús Zerpa (IA)</span>
+    <span id="jz-close-cv" style="cursor: pointer; font-size: 24px; line-height: 1;">&times;</span>
+  </div>
+
+  <div id="jz-cv-history" style="height: 320px; padding: 15px; overflow-y: auto; background: #f4faf6; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+    <div style="background: #ffffff; border: 1px solid #d1e7dd; color: #333; padding: 10px; border-radius: 8px; align-self: flex-start; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+      <strong>Reclutador IA:</strong> ¡Hola! Soy el asistente encargado de presentar la trayectoria de Jesús Zerpa. Su perfil une más de 14 años en <strong>Finanzas Corporativas</strong> con el poder del <strong>Machine Learning y la IA</strong>. ¿Te gustaría saber sobre su experiencia o sus habilidades?
+    </div>
+  </div>
+
+  <div style="display: flex; padding: 10px; background: #fff; border-top: 1px solid #ddd;">
+    <input type="text" id="jz-cv-input" placeholder="Ej. ¿Qué lenguajes maneja?..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; focus: border-color: #008f39;">
+    <button id="jz-cv-btn" style="background: #008f39; color: white; border: none; padding: 0 15px; margin-left: 8px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.3s;">Enviar</button>
+  </div>
+</div>
+
+<script>
+  // FÍJATE QUE AHORA TERMINA EN /api/cv
+  const vercelCV_URL = 'https://gemini-backend-ecru.vercel.app/api/cv';
+  let cvHistory = [];
+
+  const cvToggleBtn = document.getElementById('jz-cv-toggle');
+  const cvContainer = document.getElementById('jz-cv-container');
+  const cvCloseBtn = document.getElementById('jz-close-cv');
+  const cvSendBtn = document.getElementById('jz-cv-btn');
+  const cvInput = document.getElementById('jz-cv-input');
+  const cvHistoryBox = document.getElementById('jz-cv-history');
+
+  cvToggleBtn.addEventListener('click', () => {
+    cvContainer.style.display = 'flex';
+    cvToggleBtn.style.display = 'none'; 
+  });
+
+  cvCloseBtn.addEventListener('click', () => {
+    cvContainer.style.display = 'none';
+    cvToggleBtn.style.display = 'flex'; 
+  });
+
+  function formatearTextoCV(texto) {
+    return texto.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+  }
+
+  async function enviarMensajeCV() {
+    const message = cvInput.value.trim();
+    if (!message) return;
+
+    cvHistoryBox.innerHTML += `
+      <div style="background: #008f39; color: white; padding: 10px; border-radius: 8px; align-self: flex-end; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <strong>Tú:</strong> ${message}
+      </div>`;
+    
+    cvInput.value = '';
+    cvSendBtn.disabled = true;
+    cvSendBtn.style.background = '#80c79c';
+    cvSendBtn.innerText = '...';
+    cvHistoryBox.scrollTop = cvHistoryBox.scrollHeight;
+
+    try {
+      const response = await fetch(vercelCV_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: message, history: cvHistory })
+      });
+
+      if (!response.ok) throw new Error('Error en el servidor');
+
+      const data = await response.json();
+      const botResponse = data.text;
+
+      cvHistoryBox.innerHTML += `
+        <div style="background: #ffffff; border: 1px solid #d1e7dd; color: #333; padding: 10px; border-radius: 8px; align-self: flex-start; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <strong>Reclutador IA:</strong> ${formatearTextoCV(botResponse)}
+        </div>`;
+
+      cvHistory.push(
+        { role: "user", parts: [{ text: message }] },
+        { role: "model", parts: [{ text: botResponse }] }
+      );
+
+    } catch (error) {
+      console.error("Error:", error);
+      cvHistoryBox.innerHTML += `
+        <div style="background: #ffebee; color: #c62828; padding: 10px; border-radius: 8px; align-self: center; font-size: 12px; margin-top: 5px;">
+          Error al conectar con la IA.
+        </div>`;
+    } finally {
+      cvSendBtn.disabled = false;
+      cvSendBtn.style.background = '#008f39';
+      cvSendBtn.innerText = 'Enviar';
+      cvHistoryBox.scrollTop = cvHistoryBox.scrollHeight;
+    }
+  }
+
+  cvSendBtn.addEventListener("click", enviarMensajeCV);
+
+  cvInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      enviarMensajeCV();
+    }
+  });
+</script>
+<!-- === FIN DEL WIDGET DE CV === -->
   </body>
 </html>
