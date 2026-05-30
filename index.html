@@ -760,34 +760,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/aos.js"></script>
     <script src="scripts/main.js"></script>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>  
-   <!-- === INICIO DEL WIDGET DE CV (VERDE IA/FINANZAS) === -->
-<!-- Botón flotante -->
-<div id="jz-cv-toggle" style="position: fixed; bottom: 80px; right: 20px; width: 60px; height: 60px; background: #008f39; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,143,57,0.3); z-index: 10000; transition: transform 0.3s;">
-  💼
+   <!-- === INICIO DEL WIDGET FINANCIERO / IA === -->
+<!-- Botón flotante: Se cambió el maletín por las letras "IA" elegantes -->
+<div id="jz-cv-toggle" style="position: fixed; bottom: 80px; right: 20px; width: 60px; height: 60px; background: #008f39; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Segoe UI', sans-serif; font-weight: 900; font-size: 22px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,143,57,0.3); z-index: 10000; transition: transform 0.3s;">
+  IA
 </div>
 
 <!-- Ventana de chat -->
 <div id="jz-cv-container" style="position: fixed; bottom: 150px; right: 20px; width: 350px; background: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); font-family: 'Segoe UI', Arial, sans-serif; overflow: hidden; z-index: 9999; display: none; flex-direction: column; border: 1px solid #e0e0e0;">
   
   <div style="background: #008f39; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 16px;">
-    <span>Entrevista a Jesús Zerpa (IA)</span>
+    <span>Asistente IA - Jesús Zerpa</span>
     <span id="jz-close-cv" style="cursor: pointer; font-size: 24px; line-height: 1;">&times;</span>
   </div>
 
-  <div id="jz-cv-history" style="height: 320px; padding: 15px; overflow-y: auto; background: #f4faf6; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
-    <div style="background: #ffffff; border: 1px solid #d1e7dd; color: #333; padding: 10px; border-radius: 8px; align-self: flex-start; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-      <strong>Reclutador IA:</strong> ¡Hola! Soy el asistente encargado de presentar la trayectoria de Jesús Zerpa. Su perfil une más de 14 años en <strong>Finanzas Corporativas</strong> con el poder del <strong>Machine Learning y la IA</strong>. ¿Te gustaría saber sobre su experiencia o sus habilidades?
+  <div id="jz-cv-history" style="height: 330px; padding: 15px; overflow-y: auto; background: #f4faf6; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+    <div style="background: #ffffff; border: 1px solid #d1e7dd; color: #333; padding: 10px; border-radius: 8px; align-self: flex-start; max-width: 90%; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+      <strong>Asistente IA:</strong> ¡Hola! Conozco a fondo la experiencia de Jesús en <strong>Finanzas Corporativas, Planificación y Presupuesto</strong> potenciada con <strong>Inteligencia Artificial y Análisis Predictivo</strong>.<br><br>¿En qué te puedo ayudar? También te invito a explorar sus herramientas en su <a href="https://jesusbz.github.io" target="_blank" style="color: #007a31; font-weight: bold; text-decoration: underline;">Portafolio de Proyectos</a>.
     </div>
   </div>
 
   <div style="display: flex; padding: 10px; background: #fff; border-top: 1px solid #ddd;">
-    <input type="text" id="jz-cv-input" placeholder="Ej. ¿Qué lenguajes maneja?..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; focus: border-color: #008f39;">
+    <input type="text" id="jz-cv-input" placeholder="Ej. ¿Qué modelos predictivos usas?..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; focus: border-color: #008f39;">
     <button id="jz-cv-btn" style="background: #008f39; color: white; border: none; padding: 0 15px; margin-left: 8px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.3s;">Enviar</button>
   </div>
 </div>
 
 <script>
-  // FÍJATE QUE AHORA TERMINA EN /api/cv
   const vercelCV_URL = 'https://gemini-backend-ecru.vercel.app/api/cv';
   let cvHistory = [];
 
@@ -808,8 +807,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     cvToggleBtn.style.display = 'flex'; 
   });
 
+  // Función mejorada para formatear enlaces, negritas y saltos de línea de Gemini
   function formatearTextoCV(texto) {
-    return texto.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+    let formateado = texto.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Negritas
+    formateado = formateado.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: #007a31; font-weight: bold;">$1</a>'); // Hacer los enlaces clickeables
+    return formateado.replace(/\n/g, '<br>'); // Saltos de línea
   }
 
   async function enviarMensajeCV() {
@@ -839,9 +841,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const data = await response.json();
       const botResponse = data.text;
 
+      // Se cambió "Reclutador IA" por "Asistente IA"
       cvHistoryBox.innerHTML += `
-        <div style="background: #ffffff; border: 1px solid #d1e7dd; color: #333; padding: 10px; border-radius: 8px; align-self: flex-start; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-          <strong>Reclutador IA:</strong> ${formatearTextoCV(botResponse)}
+        <div style="background: #ffffff; border: 1px solid #d1e7dd; color: #333; padding: 10px; border-radius: 8px; align-self: flex-start; max-width: 90%; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+          <strong>Asistente IA:</strong> ${formatearTextoCV(botResponse)}
         </div>`;
 
       cvHistory.push(
@@ -853,7 +856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       console.error("Error:", error);
       cvHistoryBox.innerHTML += `
         <div style="background: #ffebee; color: #c62828; padding: 10px; border-radius: 8px; align-self: center; font-size: 12px; margin-top: 5px;">
-          Error al conectar con la IA.
+          Error de conexión. Por favor intenta de nuevo.
         </div>`;
     } finally {
       cvSendBtn.disabled = false;
@@ -872,6 +875,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   });
 </script>
-<!-- === FIN DEL WIDGET DE CV === -->
+<!-- === FIN DEL WIDGET === -->
   </body>
 </html>
