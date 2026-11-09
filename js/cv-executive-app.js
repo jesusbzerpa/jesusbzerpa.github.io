@@ -189,7 +189,6 @@
     { name: 'Carlos Betancourt', role: 'Ingeniero', note: 'Destaca su facilidad en estructuración de datos, visualización gráfica, modelización y simulación estadística.' },
     { name: 'Alfredo Medina', role: 'Economista', note: 'Resalta su dominio del lenguaje R, informes avanzados en RMarkdown y tableros interactivos.' },
     { name: 'Astrid Mora', role: 'Administrador', note: 'Destaca su perfil analítico, investigador nato, proactividad y orientación al logro de resultados.' },
-    { name: 'Riwil Fuentes', role: 'Administrador', note: 'Resalta el desarrollo del Dashboard Financiero corporativo y su liderazgo técnico y humano.' },
     { name: 'Anabell Flores', role: 'Analista Contable', note: 'Destaca su experiencia en procesos, disciplina, liderazgo de equipos y presentaciones estratégicas.' },
     { name: 'Rafael Gallardo', role: 'Contador Público', note: 'Resalta su capacidad para innovar la panorámica financiera del negocio y desarrollar modelos de simulación estadística.' },
     { name: 'Belkys Velasco', role: 'Gestión de Riesgo', note: 'Destaca su alto perfil en gestión de proyectos, finanzas y liderazgo de equipos.' },
@@ -377,7 +376,7 @@
       `- **Propuesta de Valor:** *¿Por qué contratar a Jesús Zerpa y cuál es su diferencial ejecutivo?*\n` +
       `- **Logros y KPIs:** *Resultados cuantificables en Consorcio Credicard, Grupo Mistral, Multimédica y CG Security Group.*\n` +
       `- **Dominio Tecnológico:** *Aplicación de Business Intelligence, Power BI (DAX), RStudio, Python (LSTM / GARCH) y Excel/VBA.*\n` +
-      `- **Liderazgo y Referencias:** *Manejo de equipos, reporte a directiva y sus 10 referencias verificadas en LinkedIn.*\n` +
+      `- **Liderazgo y Referencias:** *Manejo de equipos, reporte a directiva y sus 9 referencias verificadas en LinkedIn.*\n` +
       `- **Coordinación de Entrevista:** *Si deseas pautar una sesión con él, escribe **"Agendar entrevista"**.*`;
   }
 
@@ -399,7 +398,7 @@
 
   function answerReferences() {
     return `**Referencias Profesionales de ${PROFILE.name}:**\n\n` +
-      `- **10 Referencias Verificadas en LinkedIn:** Faustino Mendoza (*Economista*), Betzi Pacheco (*Contador Público*), Carlos Betancourt (*Ingeniero*), Alfredo Medina (*Economista*), Astrid Mora (*Administrador*), Riwil Fuentes (*Administrador*), Anabell Flores (*Analista Contable*), Rafael Gallardo (*Contador Público*), Belkys Velasco (*Gestión de Riesgo*) y Leonel Valdespino (*Ingeniero*).\n\n` +
+      `- **9 Referencias Verificadas en LinkedIn:** Faustino Mendoza (*Economista*), Betzi Pacheco (*Contador Público*), Carlos Betancourt (*Ingeniero*), Alfredo Medina (*Economista*), Astrid Mora (*Administrador*), Anabell Flores (*Analista Contable*), Rafael Gallardo (*Contador Público*), Belkys Velasco (*Gestión de Riesgo*) y Leonel Valdespino (*Ingeniero*).\n\n` +
       `Puedes consultar todas las citas y enlaces directos en la sección [Referencias](#reference) de esta página.`;
   }
 
@@ -416,7 +415,7 @@
       `- **Perfil y KPIs Ejecutivos:** En [Perfil](#about) encontrarás su síntesis directiva, indicadores de impacto y áreas de dominio.\n` +
       `- **Experiencia Profesional:** En [Experiencia](#experience) conocerás sus 7 cargos directivos y gerenciales desde Banesco hasta Consorcio Credicard.\n` +
       `- **Formación Académica:** En [Educación](#education) verás sus títulos como Economista (UAH), Diplomado en Finanzas (Uninet) y T.S.U. en Gerencia Financiera (I.U.P.G.).\n` +
-      `- **Referencias Profesionales:** En [Referencias](#reference) puedes leer las 10 referencias verificadas en LinkedIn.\n` +
+      `- **Referencias Profesionales:** En [Referencias](#reference) puedes leer las 9 referencias verificadas en LinkedIn.\n` +
       `- **Portafolio y Servicios:** En [Portafolio](#portfolio) explorarás sus modelos cuantitativos y el enlace a su plataforma de [Servicios de Consultoría](${CONTACT.consultingSite}).`;
   }
 
@@ -472,7 +471,7 @@
       return answerTourGuide();
     }
 
-    if (hasAny(q, ['referencia', 'referencias', 'recomendacion', 'carta', 'testimonios', 'faustino', 'betzi', 'riwil', 'astrid', 'anabell', 'rafael', 'belkys', 'leonel'])) {
+    if (hasAny(q, ['referencia', 'referencias', 'recomendacion', 'carta', 'testimonios', 'faustino', 'betzi', 'astrid', 'anabell', 'rafael', 'belkys', 'leonel'])) {
       return answerReferences();
     }
 
