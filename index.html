@@ -60,7 +60,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/aos.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles/main.css?v=4.5" rel="stylesheet"/>
+    <link href="styles/main.css?v=20261114f" rel="stylesheet"/>
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="Jesús Benjamín Zerpa — Currículum Web Ejecutivo" />
     <meta property="og:title" content="Jesús Benjamín Zerpa | Economista, Planificación Financiera y Data Science" />
@@ -994,11 +994,10 @@
 </div>
 
 <!-- Ventana de chat -->
-<div id="jz-cv-container" style="position: fixed; bottom: 108px; right: 24px; width: 375px; max-width: calc(100vw - 32px); background: #ffffff; border-radius: 14px; box-shadow: 0 16px 42px rgba(7,18,36,0.38); font-family: 'Segoe UI', Arial, sans-serif; overflow: hidden; z-index: 9999; display: none; flex-direction: column; border: 1.5px solid #B8955A;">
-  
-  <div style="background: linear-gradient(135deg, #071224 0%, #0B1B33 55%, #163259 100%); border-bottom: 2px solid #B8955A; color: white; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <div style="width: 34px; height: 34px; border-radius: 50%; background: rgba(22,50,89,0.9); border: 1.5px solid #38BDF8; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 10px rgba(56,189,248,0.4);">
+<div id="jz-cv-container" class="jz-cv-window" role="dialog" aria-label="Asistente Ejecutivo y CV de Jesús Benjamín Zerpa">
+  <div class="jz-cv-header">
+    <div class="jz-cv-header-title">
+      <div class="jz-cv-avatar" aria-hidden="true">
         <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
           <polygon points="32,6 54,19 54,45 32,58 10,45 10,19" stroke="#D9C29A" stroke-width="3" fill="none" />
           <polygon points="32,18 44,32 32,46 20,32" fill="rgba(56,189,248,0.35)" stroke="#38BDF8" stroke-width="2.5" />
@@ -1006,34 +1005,47 @@
         </svg>
       </div>
       <div>
-        <div style="font-weight: 800; font-size: 14.5px; color: #FFFFFF; letter-spacing: 0.3px;">Asistente IA · Jesús Benjamín Zerpa</div>
-        <div style="font-size: 10.5px; color: #38BDF8; font-weight: 700; letter-spacing: 0.6px;">● ATENCIÓN A ENTREVISTADORES &amp; CV</div>
+        <div class="jz-cv-name">Asistente IA · Jesús Benjamín Zerpa</div>
+        <div class="jz-cv-badge">
+          <span class="jz-cv-badge-dot" aria-hidden="true"></span>
+          <span>Google Gemini · Atención Ejecutiva &amp; CV</span>
+        </div>
       </div>
     </div>
-    <span id="jz-close-cv" style="cursor: pointer; font-size: 24px; line-height: 1; color: #D9C29A; padding: 2px 6px;">&times;</span>
-  </div>
-
-  <div id="jz-cv-history" style="height: 320px; padding: 14px; overflow-y: auto; background: #F4F6FA; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px;">
-    <div style="background: #ffffff; border: 1px solid #E2E8F0; border-left: 3px solid #B8955A; color: #334155; padding: 10px 12px; border-radius: 8px; align-self: flex-start; max-width: 94%; box-shadow: 0 2px 5px rgba(11,27,51,0.05); flex-shrink: 0; line-height: 1.48;">
-      <strong>Asistente IA:</strong> ¡Bienvenido(a)! Estoy entrenado para atender a <strong>entrevistadores, reclutadores ejecutivos, directivos y visitantes</strong> sobre el perfil de <strong>Jesús Benjamín Zerpa</strong> (<strong>+14 años de amplia experiencia</strong> en Planificación Financiera y Presupuesto, y <strong>sólidas fortalezas</strong> en <strong>Business Intelligence, Econometría, RStudio y Python</strong>).<br><br>Selecciona un tema rápido abajo o escribe tu consulta:
+    <div class="jz-cv-header-actions">
+      <button type="button" id="jz-expand-cv" class="jz-cv-action-btn" title="Expandir o contraer ventana" aria-label="Expandir o contraer asistente">
+        <svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+      </button>
+      <button type="button" id="jz-clear-cv" class="jz-cv-action-btn" title="Reiniciar conversación" aria-label="Reiniciar conversación">
+        <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+      </button>
+      <button type="button" id="jz-close-cv" class="jz-cv-action-btn" title="Cerrar asistente" aria-label="Cerrar asistente">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
     </div>
   </div>
 
   <div class="jz-interviewer-chips">
     <button type="button" class="jz-chip-btn" data-prompt="¿Por qué contratar a Jesús Benjamín Zerpa?">¿Por qué contratarlo?</button>
     <button type="button" class="jz-chip-btn" data-prompt="¿Cuáles son sus principales logros cuantificables y KPIs?">Logros y KPIs</button>
-    <button type="button" class="jz-chip-btn" data-prompt="¿Cómo aplica Business Intelligence y Ciencia de Datos?">BI &amp; Ciencia de Datos</button>
+    <button type="button" class="jz-chip-btn" data-prompt="¿Cómo aplica Inteligencia Financiera, BI y Ciencia de Datos?">Inteligencia Financiera &amp; BI</button>
     <button type="button" class="jz-chip-btn" data-prompt="Háblame de su liderazgo, equipos y referencias">Liderazgo &amp; Referencias</button>
     <button type="button" class="jz-chip-btn jz-chip-gold" data-prompt="Quiero agendar una entrevista con Jesús">Agendar Entrevista</button>
   </div>
 
-  <div style="display: flex; padding: 10px; background: #fff; border-top: 1px solid #E2E8F0;">
-    <input type="text" id="jz-cv-input" maxlength="550" placeholder="Pregunta o pega los requisitos de tu vacante..." style="flex: 1; padding: 9px 11px; border: 1px solid #CBD5E1; border-radius: 6px; outline: none; font-size: 13px;">
-    <button id="jz-cv-btn" style="background: linear-gradient(135deg, #0B1B33 0%, #163259 100%); color: #D9C29A; border: 1px solid #B8955A; padding: 0 15px; margin-left: 8px; border-radius: 6px; cursor: pointer; font-weight: 800; font-size: 13px; transition: all 0.25s;">Enviar</button>
+  <div id="jz-cv-history" class="jz-cv-history">
+    <div class="jz-chat-bubble bot">
+      <strong>Asistente IA:</strong> ¡Bienvenido(a)! Estoy entrenado para atender a <strong>entrevistadores, reclutadores ejecutivos, directivos y visitantes</strong> sobre el perfil de <strong>Jesús Benjamín Zerpa</strong> (<strong>+14 años de amplia experiencia</strong> en Planificación Financiera y Presupuesto, y <strong>sólidas fortalezas</strong> en <strong>Inteligencia Financiera, Business Intelligence, Econometría, RStudio y Python</strong>). Pega los requisitos de una vacante o consulta abajo:
+    </div>
+  </div>
+
+  <div class="jz-cv-input-area">
+    <textarea id="jz-cv-input" rows="1" maxlength="1800" placeholder="Consulta logros, pega los requisitos de tu vacante o agenda entrevista..." autocomplete="off"></textarea>
+    <button type="button" id="jz-cv-btn">Enviar</button>
   </div>
 </div>
 
-<script src="js/cv-executive-app.js?v=4.5"></script>
+<script src="js/cv-executive-app.js?v=20261114f"></script>
 <!-- === FIN DEL WIDGET === -->
   </body>
 </html>
