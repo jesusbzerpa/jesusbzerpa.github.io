@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /.env
+Disallow: /Ref.pdf
+Disallow: /images/slideshow.html
+Disallow: /scratch/
 
 Sitemap: https://jesusbzerpa.github.io/sitemap.xml

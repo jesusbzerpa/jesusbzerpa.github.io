@@ -8137,3 +8137,67 @@ footer.footer.jz-exec-footer .jz-footer-links li a:hover {
     padding-bottom: 50px;
   }
 }
+
+/* === JBZ CORPORATE EXECUTIVE LOGO (TOP-RIGHT NAVBAR) === */
+.navbar > .container {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .navbar > .container {
+    max-width: 1320px;
+  }
+}
+
+.jbz-nav-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 16px;
+  padding: 2px;
+  border-radius: 10px;
+  background: rgba(11, 27, 51, 0.35);
+  box-shadow: 0 4px 14px rgba(7, 18, 36, 0.28);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  text-decoration: none !important;
+}
+
+.jbz-nav-logo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(184, 149, 90, 0.35);
+}
+
+.jbz-nav-logo img {
+  display: block;
+  height: 38px;
+  width: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .jbz-nav-logo {
+    margin-left: 10px;
+  }
+  .jbz-nav-logo img {
+    height: 32px;
+  }
+}
+
+@media (max-width: 991px) {
+  .sidebar-collapse .navbar > .container {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  .sidebar-collapse .navbar .navbar-translate {
+    width: auto !important;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .jbz-nav-logo {
+    margin-left: 4px;
+    order: 3;
+  }
+  .jbz-nav-logo img {
+    height: 31px;
+  }
+}
