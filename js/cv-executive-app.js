@@ -1143,7 +1143,7 @@
       `- **Experiencia Profesional:** En [Experiencia](#experience) conocerás sus 7 cargos directivos y gerenciales desde Banesco hasta Consorcio Credicard.\n` +
       `- **Formación Académica:** En [Educación](#education) verás sus títulos como Economista (UAH), Diplomado en Finanzas (Uninet) y T.S.U. en Gerencia Financiera (I.U.P.G.).\n` +
       `- **Referencias Profesionales:** En [Referencias](#reference) puedes leer las 9 referencias verificadas en LinkedIn.\n` +
-      `- **Portafolio y Servicios:** En [Portafolio](#portfolio) explorarás sus **19 estudios cuantitativos** (incluyendo los [Sistemas de Ejecución Algorítmica y Carteras Cripto](${CONTACT.portfolioSite}bot-trading-python/#sec-certificacion) y el [Simulador Nexus Quant FP&A](${CONTACT.portfolioSite}FinancialDashboard.htm)) y su plataforma de [Servicios de Consultoría](${CONTACT.consultingSite}).`;
+      `- **Portafolio y Servicios:** En [Portafolio](#portfolio) explorarás sus **19 estudios cuantitativos** (incluyendo los [Sistemas de Ejecución Algorítmica y Carteras Cripto](${CONTACT.portfolioSite}bot-trading-python/) y el [Simulador Nexus Quant FP&A](${CONTACT.portfolioSite}FinancialDashboard.htm)) y su plataforma de [Servicios de Consultoría](${CONTACT.consultingSite}).`;
   }
 
   function answerContact() {
@@ -1153,7 +1153,7 @@
       `- **Telegram:** [${CONTACT.telegram}](${CONTACT.telegramUrl})\n` +
       `- **LinkedIn:** [Perfil ejecutivo](${CONTACT.linkedin})\n` +
       `- **Portafolio de 19 Estudios Cuantitativos:** [jesusbz.github.io](${CONTACT.portfolioSite})\n` +
-      `- **Sistemas de Ejecución Algorítmica Cripto (SHA-256):** [Explorar Estudio #19](${CONTACT.portfolioSite}bot-trading-python/#sec-certificacion)\n` +
+      `- **Sistemas de Ejecución Algorítmica Cripto (SHA-256):** [Explorar Estudio #19](${CONTACT.portfolioSite}bot-trading-python/)\n` +
       `- **Currículum en PDF:** [Descargar Curriculum.pdf](${CONTACT.cvPdf})`;
   }
 
@@ -1232,7 +1232,7 @@
       return `**Dominio de Inteligencia Financiera, Business Intelligence & Ciencia de Datos:**\n\n` +
         `**${PROFILE.name}** integra finanzas directivas con modelización cuantitativa avanzada (**19 estudios publicados (incl. #19 Sistemas de Ejecución Algorítmica y Carteras Cripto, #17 VAR(8) Python y #18 VAR(p) RStudio) en [jesusbz.github.io](${CONTACT.portfolioSite})**):\n\n` +
         `- **Inteligencia Financiera & Dashboards BI (95%):** Cuadros de mando en 4 niveles en **Power BI (DAX)**, **Excel Avanzado (98%) / VBA (90%)**, **Tableau (85%)** y el [Simulador Interactivo Nexus Quant FP&A](${CONTACT.portfolioSite}FinancialDashboard.htm).\n` +
-        `- **Python, Ejecución Algorítmica & Deep Learning (92%–95%):** [Sistemas de Ejecución Algorítmica y Carteras Cripto con Verificación SHA-256 (#19)](${CONTACT.portfolioSite}bot-trading-python/#sec-certificacion) sobre OKX API v5 & Bybit API v5, [VAR(8), Granger & Diebold-Yilmaz (#17)](${CONTACT.portfolioSite}vectores-autorregresivos-var-python.html) (TSI 44.89%, Sharpe 0.845, Max DD -13.32%) + [Edición RStudio (#18)](${CONTACT.portfolioSite}trading-vectores-autoregresivos-en-rstudio.html), [Monte Carlo Multivariante Cholesky + Merton (#16)](${CONTACT.portfolioSite}simulacion-monte-carlo-portafolios-python.html) (evaluación fuera de muestra 2020–2026: $10k→$23,381 P55.82%; 10Y P50 $54,715; VaR 95% $22,178; -80.26% varianza), [Volatilidad AR(1)-EGARCH(2,1) + VaR/CVaR (#15)](${CONTACT.portfolioSite}volatilidad-garch-var-cvar-python.html) (CVaR 99% -6.96%, Kupiec p=0.45 Basilea III/IV) y [Deep Portfolio LSTM en PyTorch (#14)](${CONTACT.portfolioSite}deep-portfolio-lstm-python.html) ($15,057 +201%, Sharpe 0.99).\n` +
+        `- **Python, Ejecución Algorítmica & Deep Learning (92%–95%):** [Sistemas de Ejecución Algorítmica y Carteras Cripto con Verificación SHA-256 (#19)](${CONTACT.portfolioSite}bot-trading-python/) sobre OKX API v5 & Bybit API v5, [VAR(8), Granger & Diebold-Yilmaz (#17)](${CONTACT.portfolioSite}vectores-autorregresivos-var-python.html) (TSI 44.89%, Sharpe 0.845, Max DD -13.32%) + [Edición RStudio (#18)](${CONTACT.portfolioSite}trading-vectores-autoregresivos-en-rstudio.html), [Monte Carlo Multivariante Cholesky + Merton (#16)](${CONTACT.portfolioSite}simulacion-monte-carlo-portafolios-python.html) (evaluación fuera de muestra 2020–2026: $10k→$23,381 P55.82%; 10Y P50 $54,715; VaR 95% $22,178; -80.26% varianza), [Volatilidad AR(1)-EGARCH(2,1) + VaR/CVaR (#15)](${CONTACT.portfolioSite}volatilidad-garch-var-cvar-python.html) (CVaR 99% -6.96%, Kupiec p=0.45 Basilea III/IV) y [Deep Portfolio LSTM en PyTorch (#14)](${CONTACT.portfolioSite}deep-portfolio-lstm-python.html) ($15,057 +201%, Sharpe 0.99).\n` +
         `- **Econometría & Series Temporales en R (95%):** SARIMA/ETS ([Estudio #1](${CONTACT.portfolioSite}modelo-ventas.html)), Prophet, Process Mining (bupaR) y [Trading Técnico BTC (#13)](${CONTACT.portfolioSite}trading-medias-moviles-rstudio.html).\n\n` +
         `Puedes ver sus barras de habilidades en [Habilidades Informáticas](#skill) y su [Portafolio](#portfolio).`;
     }
@@ -1268,7 +1268,7 @@
       matches.push(`- **Inteligencia Financiera (95%) & Business Intelligence:** Dominio de **Power BI & DAX (95%)**, **Excel Avanzado (98%) / VBA (90%)**, consolidación BI para 3 divisiones en **Grupo Mistral** y desarrollo del [Simulador Interactivo Nexus Quant FP&A](${CONTACT.portfolioSite}FinancialDashboard.htm).`);
     }
     if (hasAny(q, ['python', 'rstudio', 'machine learning', 'deep learning', 'lstm', 'pytorch', 'garch', 'monte carlo', 'econometria', 'data science', 'ciencia de datos', 'forecast', 'bot', 'trading'])) {
-      matches.push(`- **Ciencia de Datos, Ejecución Algorítmica & Econometría Aplicada (95%):** Portafolio de **19 estudios reproducibles**, incluyendo [Sistemas de Ejecución Algorítmica y Carteras Cripto con SHA-256 (#19)](${CONTACT.portfolioSite}bot-trading-python/#sec-certificacion), [Monte Carlo Cholesky/Merton (#16)](${CONTACT.portfolioSite}simulacion-monte-carlo-portafolios-python.html), [EGARCH + CVaR 99% (#15)](${CONTACT.portfolioSite}volatilidad-garch-var-cvar-python.html) y [Deep Portfolio LSTM PyTorch (#14)](${CONTACT.portfolioSite}deep-portfolio-lstm-python.html).`);
+      matches.push(`- **Ciencia de Datos, Ejecución Algorítmica & Econometría Aplicada (95%):** Portafolio de **19 estudios reproducibles**, incluyendo [Sistemas de Ejecución Algorítmica y Carteras Cripto con SHA-256 (#19)](${CONTACT.portfolioSite}bot-trading-python/), [Monte Carlo Cholesky/Merton (#16)](${CONTACT.portfolioSite}simulacion-monte-carlo-portafolios-python.html), [EGARCH + CVaR 99% (#15)](${CONTACT.portfolioSite}volatilidad-garch-var-cvar-python.html) y [Deep Portfolio LSTM PyTorch (#14)](${CONTACT.portfolioSite}deep-portfolio-lstm-python.html).`);
     }
     if (hasAny(q, ['capex', 'proyecto', 'pmbok', 'evm', 'valor ganado', 'obra', 'inversion', 'factibilidad', 'viabilidad'])) {
       matches.push('- **Evaluación de Proyectos CAPEX & PMBOK/EVM:** Formulación internacional **Global Nutrition España**, control presupuestario de **+32 obras bancarias** con **40% de ahorro en viáticos** en **CG Security Group** y enfoque PMI.');
@@ -1297,7 +1297,7 @@
       : '';
     return `CANDIDATO: ${PROFILE.name} — ${PROFILE.title}. ${PROFILE.summary} Formación: ${PROFILE.education}\n` +
       `LOGROS & SKILLS CV: +15 años, +14 empresas y filiales, 40% ahorro viáticos, +32 obras, 90% áreas riesgo, 85% inflación, 3 divisiones BI, 9 refs LinkedIn, 4 aliados incl. Astrid Mora. Skills: Excel 98%, BI/Int. Financiera/Power BI/R/Econometría/Gretl 95%, Python/ML 92%, VBA 90%.\n` +
-      `PORTAFOLIO (19 estudios ${CONTACT.portfolioSite}): #19 Sistemas de Ejecución Algorítmica y Carteras Cripto en Python SHA-256 bot-trading-python/#sec-certificacion, #17 VAR(8) Diebold-Yilmaz 44.89% Python, #18 VAR(p) RStudio, #16 Monte Carlo Cholesky/Merton ($10k->$23,381), #15 EGARCH CVaR, #14 LSTM PyTorch ($15,057 +201%), Simulador Nexus Quant FP&A 5 módulos (FinancialDashboard.htm). Consultoría: ${CONTACT.consultingSite}. CV PDF: ${CONTACT.cvPdf}.\n` +
+      `PORTAFOLIO (19 estudios ${CONTACT.portfolioSite}): #19 Sistemas de Ejecución Algorítmica y Carteras Cripto en Python SHA-256 bot-trading-python/, #17 VAR(8) Diebold-Yilmaz 44.89% Python, #18 VAR(p) RStudio, #16 Monte Carlo Cholesky/Merton ($10k->$23,381), #15 EGARCH CVaR, #14 LSTM PyTorch ($15,057 +201%), Simulador Nexus Quant FP&A 5 módulos (FinancialDashboard.htm). Consultoría: ${CONTACT.consultingSite}. CV PDF: ${CONTACT.cvPdf}.\n` +
       `TRAYECTORIA CLAVE:\n${topCareer}${refBlock}\n` +
       `CONTACTO: ${CONTACT.phone}, canal protegido en formulario, LinkedIn ${CONTACT.linkedin}.`;
   }
