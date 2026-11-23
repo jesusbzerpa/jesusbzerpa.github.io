@@ -30,3 +30,13 @@ Ref.pdf
 .DS_Store
 Thumbs.db
 scratch/
+
+# Bytecode, temporary logs, and legacy local build/office artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+_site/
+FinancialDashboard_archivos/
+*.xlsx
+*.xls
+live_execution.log
